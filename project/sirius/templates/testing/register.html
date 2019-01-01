@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<style>
+body{
+	
+}
+
+h2
+{
+	text-align:center;
+	color:black;
+	font-size:30px;
+	padding:8px 4px;
+}
+
+.registerbox
+{
+	position:relative;
+	width:615;
+	height:695;
+	background:#000;
+	color:#fff;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	box-sizing:border-box;
+	padding:10px 10px;
+}
+
+h4{
+	text-align: center;
+	font-size: 18px;
+	font-family: verdana;
+	position: relative;
+}
+
+</style>
+<body>
+<title> register </title>
+	
+
+
+<div class="container">       
+<h2><b> Create new account </b> </h2>
+	<h4> welcome to Sirius, Sirius is an online social networking platform connects you with interesting people in field of space. </h4>
+</div>
+	
+			<div class="registerbox">
+			<form class="col-sm-8" class="form-control" method="post">
+				{% csrf_token %}
+				{{ form | crispy }}
+
+	<button class="btn btn-success" type="submit">Submit</button>
+	<a type="submit" class="btn btn-success" href="/account/login">Login</a>
+</form>
+</div>
+
+</body>
+{% endblock %}	 

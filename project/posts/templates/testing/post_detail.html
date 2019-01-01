@@ -1,0 +1,58 @@
+{% extends 'base1.html'%}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+<div class='col-sm-7 col-sm-offset-3'>
+	{% if instance.image %}
+    <img src='{{ instance.image.url }}' class='img-responsive' />
+    {% endif %}
+
+<h1>{{ title }} <small>{{ instance.timestamp }}</small></h1>
+
+{% if instance.user.get_full_name %}
+<p>Posted by: {{ instance.user.get_full_name }}</p>
+{% endif %}
+
+{{ instance.content|linebreaks }}<br/>
+</div>
+
+<div class='col-sm-6 col-sm-offset-3'>
+
+<div>
+	<p class="lead">comments</p>
+
+	<form method="POST" action=".">{% csrf_token %}
+		{{ comment_form | crispy}}
+	<input type="submit" value='Post Comment' class='btn btn-default'>
+	</form>	
+	<hr/>
+	{% for comment in comments %}
+		
+		<blockquote>
+			<p>{{ comment.content }}</p>
+			<footer>posted by {{ comment.user }} | {{ comment.timestamp|timesince }} ago | {% if comment.children.count > 0 %}{{ comment.children.count }} Comment{% if comment.children.count > 1 %}s{% endif %} | {% endif %} <a class='comment-reply-btn' href='#'>Reply</a></footer>
+          <div class='comment-reply'>
+
+			{% for child_comment in comment.children %}
+		<blockquote>
+			<p>{{ child_comment.content }}</p>
+			<footer>via {{ child_comment.user }} | {{ child_comment.timestamp|timesince }} ago</footer>
+		</blockquote>
+			{% endfor %}
+
+		<form method="POST" action=".">{% csrf_token %}
+			{{ comment_form | crispy}}
+		<input type='hidden' name='parent_id' value='{{ comment.id }}'>
+		<input type='submit' value='Reply' class='btn btn-default'>
+		</form>	
+	</div>
+		</blockquote>
+<hr/>
+	{% endfor %}	
+</div>
+</div>
+
+{% endblock content %}

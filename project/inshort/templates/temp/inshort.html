@@ -1,0 +1,198 @@
+{% load staticfiles %}
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+<style>
+body{
+  font-size: 18px;
+}
+.container{
+  width:700px;
+  margin:40px auto 0;
+  display:table;
+  box-sizing:border-box;
+}
+.column{  
+  background:#000;
+  display: 10px;
+  padding: 10px;
+  width:100.33333%;
+  text-align:center;
+  color:white;
+  vertical-align:middle;
+  border-right:10px solid #fff;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: orange;
+}
+
+li {
+    float: left;
+    text-align: center;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: right;
+    padding: 24px 16px;
+    text-decoration: none;
+}
+
+
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+a{
+  color:white;
+}
+
+
+</style>
+
+
+
+{% block head%}
+   <title>Login</title>
+ {% endblock %}
+</head>
+
+
+
+{% block content %}
+<ul>
+  <li><a href="/posts/">News Feed</a></li>
+  <li><a href="/posts/create/"> Compose Post </a></li>
+  <li><a href="/home/">Mirror</a></li>
+  <li><a href="/people/">Explore</a></li>
+  <li><a href="/inshort/"> Inshort</a></li>
+  <li><a href="/future-missions/"> Missions </a></li>
+
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Settings</a>
+    <div class="dropdown-content">
+      <a href="/account/profile">Profile</a>
+      <a href="/account/profile/edit">Edit Profile</a>
+      <a href="/account/change-password">Change Password</a>
+      <a href="/account/logout">Logout</a>
+</div>
+</li>
+  <li class="dropdown">
+  <a href="javascript:void(0)" class="dropbtn">Astonomy kids</a>
+    <div class="dropdown-content">
+      <a href="/astronomy-kids/"> Fun with universe </a>
+      <a href="/astronomy-kids/model/"> Model </a>
+      <a href="/astronomy-kids/book/"> Book </a>
+    </div>
+  </li>
+
+  
+</ul>
+{% endblock %}
+{% block body %}
+
+<body>
+  
+    <div class="row">
+      <div class="column">
+        <p> solar system has 8 planets </p>
+      </div>
+      <div class="column">
+        </p> earth has 70% nitrogen and 30% oxygen </div>
+      </div>
+      <div class="column">
+        </p> 181 moons in our solar system </p>
+      </div>
+      <div class="column">
+        <p>  Mars has the biggest volcano (that we know of) </p>
+      </div>
+      <div class="column">
+        <p> Spacecraft have visited every planet in our solar system </p>
+      </div>
+      <div class="column">
+        <p> There is a massive cloud of alcohol more than 463,000,000,000 kms across, with which we can have 400 trillion trillion pints of beer.  This massive cloud of alcohol is 10,000 light years away from us </p>
+      </div>
+      <div class="column">
+        <p>  275 million new stars are born every day according to estimates of astronomers. </p>
+      </div>
+      <div class="column">
+        <p> The center of our galaxy smells like rum and tastes like raspberries. </p>
+      </div>
+      <div class="column">
+        <p> In the space, there is no sound </p>
+      </div>
+      <div class="column">
+        <p> There is no center for Universe, as every galaxy is expanding away from one another </p>
+      </div>
+      <div class="column">
+        <p> The universe began with the Big Bang, which happened around 13.7 billion years ago </p>
+      </div>
+      <div class="column">
+        <p> The most complex object in the universe is human brain, with a billion neurons and a quadrillion connections</p>
+      </div>
+      <div class="column">
+        <p> Universe was hot when it was young and gradually it has become cold </p>
+      </div>
+      <div class="column">
+        <p> The edge of our solar system is not Pluto, it is theorized Oort cloud </p>
+      </div>
+      <div class="column">
+        <p> Galileo was the first person to look into space with a telescope nearly 400 years ago. </p>
+      </div>
+</div>
+</div>
+
+
+</body>
+{% endblock %}
+
+
+</html>	
+

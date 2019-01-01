@@ -1,0 +1,28 @@
+{% extends 'base1.html'%}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<style>
+p{
+  font-size:20px;
+}
+</style>
+<div class='col-sm-6 col-sm-offset-3'>
+<h1>News Feed</h1>
+
+{% for obj in object_list %}
+        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.timestamp|timesince }} ago</small></h3>
+
+        {% if obj.image %}
+           <img src='{{ obj.image.url }}' class='img-responsive' />
+        {% endif %}
+
+        {% if obj.user.username %}
+            <p>Posted by: {{ obj.user.username }}</p>
+        {% endif %}
+
+{% endfor %}
+
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'basehome.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class='col-sm-6 col-sm-offset-3'>
+<h1>Form</h1>
+
+<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+{{ form | crispy }}
+<input type='submit' class='btn btn-success' value='Save' />
+</form>
+
+
+{{ text }}
+           {% for post in posts %}
+            
+            <h4> content: {{ post.post }}</h4><br>
+            <p class="text-right"> {{ post.created }}</p>
+                   
+            {% endfor %}
+        </div>
+
+{% endblock  %}

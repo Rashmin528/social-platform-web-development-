@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title> profile </title>
+{% endblock %}
+
+{% block body %}
+<style>
+
+.box
+{
+	position:absolute;
+	width:520;
+	height:320;
+	background:#000;
+	color:#fff;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	box-sizing:border-box;
+	padding:20px 20px;
+}
+</style>
+<body>
+		
+<div class="box">
+	<h1> Profile </h1>
+	<h3> User : {{ user }}</h3>
+	<h3> First name: {{user.first_name}}</h3>
+	<h3> Last name: {{user.last_name}}</h3>
+	<h3> Email ID: {{user.email}}</h3>
+	<h2 class="text-center" >{{ post.post }}</h2>
+</div>
+</body>
+{% endblock %}
