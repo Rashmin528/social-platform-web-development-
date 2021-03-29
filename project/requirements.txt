@@ -21,7 +21,7 @@ openpyxl==2.5.4
 Pillow==5.0.0
 pyasn1==0.4.2
 pycparser==2.18
-Pygments==2.2.0
+Pygments==2.7.4
 pyOpenSSL==17.5.0
 pyperclip==1.6.0
 pytz==2017.3
